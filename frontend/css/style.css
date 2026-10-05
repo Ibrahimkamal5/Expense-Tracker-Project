@@ -1,0 +1,256 @@
+/* Your custom styles go here.
+   Use Bootstrap classes first, and write your own CSS only when you need to. */
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+/* 
+   Design tokens
+ */
+
+:root {
+  --ink: #10262b;
+  --teal: #0e7c7b;
+  --teal-dark: #0a6362;
+  --amber: #f0a030;
+  --paper: #f2f4f3;
+  --line: #e1e6e4;
+  --text: #1d2b2e;
+  --muted: #6b7b7e;
+
+  --bs-primary: var(--teal);
+  --bs-primary-rgb: 14, 124, 123;
+  --bs-body-font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --bs-body-color: var(--text);
+}
+
+/* 
+   General
+ */
+
+body {
+  background-color: var(--paper);
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h5 {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+/* 
+   Navbar
+ */
+
+.navbar.bg-dark {
+  background-color: var(--ink) !important;
+  padding: 1rem 0;
+  border-bottom: 3px solid var(--amber);
+}
+
+.navbar-brand {
+  font-weight: 800;
+  font-size: 1.3rem !important;
+  letter-spacing: 0.01em;
+}
+
+main > h1 {
+  font-size: 2rem;
+}
+
+/* 
+   Cards (shared)
+ */
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background-color: #fff;
+}
+
+.card.shadow-sm {
+  box-shadow: 0 2px 10px rgba(16, 38, 43, 0.06) !important;
+}
+
+/* 
+   Summary Grid
+ */
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* 
+   Summary Cards
+ */
+
+.summary-grid .card {
+  height: 100%;
+  border-top: 4px solid var(--teal);
+}
+
+.summary-grid .card:nth-child(1) {
+  background-color: var(--ink);
+  border-color: var(--ink);
+  border-top-color: var(--amber);
+  color: #fff;
+}
+
+.summary-grid .card:nth-child(1) .card-title {
+  color: #9db3b4;
+}
+
+.summary-grid .card:nth-child(1) h2 {
+  color: var(--amber);
+}
+
+.summary-grid .card:nth-child(3) {
+  border-top-color: var(--amber);
+}
+
+.summary-grid .card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.summary-grid h2 {
+  margin-bottom: 0;
+  font-size: 2rem;
+}
+
+/* 
+   Form
+ */
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-control,
+.form-select {
+  min-height: 44px;
+  border-radius: 0.6rem;
+  border-color: #cfd8d6;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 0.2rem rgba(14, 124, 123, 0.2);
+}
+
+#categoryFilter {
+  max-width: 320px;
+  background-color: #fff;
+}
+
+/* 
+   Table
+ */
+.table {
+  margin-bottom: 0;
+  --bs-table-striped-bg: #f6f8f7;
+  --bs-table-hover-bg: #eaf3f2;
+}
+.table th,
+.table td {
+  vertical-align: middle;
+  padding: 0.9rem 0.85rem;
+}
+
+.table-responsive {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.table thead.table-dark,
+.table thead.table-dark th {
+  --bs-table-bg: var(--ink);
+  --bs-table-color: #cfdcdc;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* 
+   Buttons
+ */
+.btn {
+  border-radius: 0.6rem;
+  font-weight: 600;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--teal);
+  --bs-btn-border-color: var(--teal);
+  --bs-btn-hover-bg: var(--teal-dark);
+  --bs-btn-hover-border-color: var(--teal-dark);
+  --bs-btn-active-bg: var(--teal-dark);
+  --bs-btn-active-border-color: var(--teal-dark);
+  --bs-btn-focus-shadow-rgb: 14, 124, 123;
+  padding: 0.6rem 1.4rem;
+}
+
+.table .btn {
+  margin-right: 0.25rem;
+}
+
+/* 
+   Alerts, spinner, modal
+ */
+
+.alert {
+  border-radius: 0.8rem;
+  border: none;
+}
+
+.spinner-border {
+  color: var(--teal);
+}
+
+.modal-content {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 20px 50px rgba(16, 38, 43, 0.25);
+}
+
+.modal-header {
+  border-bottom-color: var(--line);
+}
+
+/* 
+   Accessibility
+ */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+  main {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .table {
+    min-width: 700px;
+  }
+  main > h1 {
+    font-size: 1.6rem;
+  }
+  #categoryFilter {
+    max-width: 100%;
+  }
+}
